@@ -2,8 +2,9 @@ import { Pressable } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import StatisticsPage from "../screens/StatisticsPage";
+import WorkoutPage from "../screens/WorkoutPage";
+import HistoryPage from "../screens/HistoryPage";
 
 import TabBarIcon from "./components/TabBarIcon";
 import Colors from "../constants/Colors";
@@ -29,7 +30,7 @@ function BottomTabNavigator() {
         >
             <BottomTab.Screen
                 name="Statistics"
-                component={TabOneScreen}
+                component={StatisticsPage}
                 options={({ navigation }: RootTabScreenProps<"Statistics">) => ({
                     title: "Statistics",
                     tabBarIcon: ({ color }) => (
@@ -54,7 +55,7 @@ function BottomTabNavigator() {
             />
             <BottomTab.Screen
                 name="Workout"
-                component={TabTwoScreen}
+                component={WorkoutPage}
                 options={{
                     title: "Workout",
                     tabBarIcon: ({ color }) => (
@@ -64,7 +65,7 @@ function BottomTabNavigator() {
             />
             <BottomTab.Screen
                 name="History"
-                component={TabTwoScreen}
+                component={HistoryPage}
                 options={{
                     title: "History",
                     tabBarIcon: ({ color }) => (
