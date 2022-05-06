@@ -5,6 +5,7 @@ import BottomTabNavigator from "./BottomTabNavigator";
 
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
+import CreateNewWorkoutPage from "../screens/CreateNewWorkout";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -20,6 +21,7 @@ function RootNavigator() {
             <Stack.Group screenOptions={{ presentation: "modal" }}>
                 <Stack.Screen name="Modal" component={ModalScreen} />
             </Stack.Group>
+            <Stack.Screen name="Create New Workout" component={CreateNewWorkoutPage} />
         </Stack.Navigator>
     );
 }

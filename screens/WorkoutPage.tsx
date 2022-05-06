@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
 import ExerciseCard from "../components/workout/ExerciseCard";
@@ -8,8 +7,6 @@ import ExerciseCard from "../components/workout/ExerciseCard";
 export default function WorkoutPage() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Workout</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
             <View style={styles.exerciseGrid}>
                 <ExerciseCard items={placeholderItems} />
             </View>

@@ -1,5 +1,5 @@
 import { Pressable } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import StatisticsPage from "../screens/StatisticsPage";
@@ -56,12 +56,24 @@ function BottomTabNavigator() {
             <BottomTab.Screen
                 name="Workout"
                 component={WorkoutPage}
-                options={{
+                options={({ navigation }: RootTabScreenProps<"Workout">) => ({
                     title: "Workout",
                     tabBarIcon: ({ color }) => (
                         <TabBarIcon name="dumbbell" color={color} source={IconSource.MaterialCommunityIcons} />
                     ),
-                }}
+                    headerRight: () => (
+                        <Pressable
+                            onPress={() => navigation.navigate("Create New Workout")}
+                        >
+                            <MaterialCommunityIcons 
+                                name="plus"
+                                size={25}
+                                color={Colors[colorScheme].text}
+                                style={{ marginRight: 25 }}
+                            />
+                        </Pressable>
+                    ),
+                })}
             />
             <BottomTab.Screen
                 name="History"
