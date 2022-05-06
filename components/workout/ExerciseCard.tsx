@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
+import { Card } from "@ui-kitten/components";
 import { Text, View } from "../Themed";
 
 interface ExerciseCardProps {
@@ -8,7 +9,7 @@ interface ExerciseCardProps {
 
 const ExerciseCard = ({ items }: ExerciseCardProps) => {
     return (
-        <View style={styles.container}>
+        <Card style={styles.container}>
             <Text style={styles.header}>Exercise Template</Text>
             <Text style={styles.date}>10 days ago</Text>
             <View>
@@ -17,7 +18,7 @@ const ExerciseCard = ({ items }: ExerciseCardProps) => {
                 ))}
                 <Text style={styles.exerciseItem}>4 x Squat (Barbell)</Text>
             </View>
-        </View>
+        </Card>
     );
 };
 

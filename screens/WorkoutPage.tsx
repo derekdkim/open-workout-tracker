@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Layout } from "@ui-kitten/components";
 
 import { Text, View } from "../components/Themed";
 
@@ -6,11 +7,11 @@ import ExerciseCard from "../components/workout/ExerciseCard";
 
 export default function WorkoutPage() {
     return (
-        <View style={styles.container}>
-            <View style={styles.exerciseGrid}>
+        <Layout style={styles.container}>
+            <Layout style={styles.exerciseGrid}>
                 <ExerciseCard items={placeholderItems} />
-            </View>
-        </View>
+            </Layout>
+        </Layout>
     );
 }
 
