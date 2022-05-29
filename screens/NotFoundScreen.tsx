@@ -1,16 +1,17 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
-
-import { Text, View } from "../components/Themed";
+import { Text, Layout, useTheme } from "@ui-kitten/components";
 import { RootStackScreenProps } from "../types";
 
 export default function NotFoundScreen({ navigation }: RootStackScreenProps<"NotFound">) {
+    const theme = useTheme();
+
     return (
-        <View style={styles.container}>
+        <Layout style={styles.container}>
             <Text style={styles.title}>This screen doesn`&apos;`t exist.</Text>
             <TouchableOpacity onPress={() => navigation.replace("Root")} style={styles.link}>
                 <Text style={styles.linkText}>Go to home screen!</Text>
             </TouchableOpacity>
-        </View>
+        </Layout>
     );
 }
 

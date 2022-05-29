@@ -1,11 +1,14 @@
-import { StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
 import { Layout } from "@ui-kitten/components";
 
-import { Text, View } from "../components/Themed";
-
 import ExerciseCard from "../components/workout/ExerciseCard";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { getCount, increment, decrement } from "../redux/slices/CounterSlice";
 
 export default function WorkoutPage() {
+    const count = useAppSelector(getCount);
+    const dispatch = useAppDispatch();
+
     return (
         <Layout style={styles.container}>
             <Layout style={styles.exerciseGrid}>
@@ -15,7 +18,7 @@ export default function WorkoutPage() {
     );
 }
 
-const placeholderItems= [
+const placeholderItems = [
     {
         name: "Squat (Barbell)",
         sets: 4,
@@ -43,7 +46,7 @@ const placeholderItems= [
     {
         name: "Triceps Pushdown (Cable - Straight Bar)",
         sets: 4,
-    }
+    },
 ];
 
 const styles = StyleSheet.create({

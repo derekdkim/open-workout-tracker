@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
+import { Text, Layout, useTheme } from "@ui-kitten/components";
 
 import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
 
 export default function HistoryPage() {
     return (
-        <View style={styles.container}>
+        <Layout style={styles.container}>
             <Text style={styles.title}>History</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+            <Layout style={styles.separator} />
             <EditScreenInfo path="/screens/WorkoutPage.tsx" />
-        </View>
+        </Layout>
     );
 }
 

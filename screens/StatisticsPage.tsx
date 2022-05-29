@@ -1,16 +1,18 @@
 import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
+import { Layout, Text, useTheme } from "@ui-kitten/components";
 
 export default function StatisticsPage({ navigation }: RootTabScreenProps<"Statistics">) {
+    const theme = useTheme();
+
     return (
-        <View style={styles.container}>
+        <Layout style={styles.container}>
             <Text style={styles.title}>Statistics</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+            <Layout style={styles.separator} />
             <EditScreenInfo path="/screens/StatisticsPage.tsx" />
-        </View>
+        </Layout>
     );
 }
 

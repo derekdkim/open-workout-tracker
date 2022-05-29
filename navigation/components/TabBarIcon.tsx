@@ -16,16 +16,16 @@ function TabBarIcon({
 }) {
     switch (source) {
         case IconSource.FontAwesome:
-            return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+            return <FontAwesome size={30} {...props} />;
             break;
         case IconSource.FontAwesome5:
-            return <FontAwesome5 size={30} style={{ marginBottom: -3 }} {...props} />;
+            return <FontAwesome5 size={30} {...props} />;
             break;
         case IconSource.MaterialCommunityIcons:
-            return <MaterialCommunityIcons size={30} style={{ marginBottom: -3 }} {...props} />;
+            return <MaterialCommunityIcons size={30} {...props} />;
             break;
         case IconSource.MaterialIcons:
-            return <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
+            return <MaterialIcons size={30} {...props} />;
             break;
     }
 }

@@ -7,28 +7,28 @@ import WorkoutPage from "../screens/WorkoutPage";
 import HistoryPage from "../screens/HistoryPage";
 
 import TabBarIcon from "./components/TabBarIcon";
-import Colors from "../constants/Colors";
 import IconSource from "../constants/IconSource";
-import useColorScheme from "../hooks/useColorScheme";
 import { RootTabParamList, RootTabScreenProps } from "../types";
+import { useTheme } from "@ui-kitten/components";
+import headerFooterStyle from "../constants/HeaderStyle";
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const PageTab = createBottomTabNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
-    const colorScheme = useColorScheme();
+function PageTabNavigator() {
+    const theme = useTheme();
 
     return (
-        <BottomTab.Navigator
+        <PageTab.Navigator
             initialRouteName="Statistics"
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme].tint,
+                ...headerFooterStyle(theme),
             }}
         >
-            <BottomTab.Screen
+            <PageTab.Screen
                 name="Statistics"
                 component={StatisticsPage}
                 options={({ navigation }: RootTabScreenProps<"Statistics">) => ({
@@ -46,14 +46,14 @@ function BottomTabNavigator() {
                             <FontAwesome
                                 name="info-circle"
                                 size={25}
-                                color={Colors[colorScheme].text}
+                                color={theme["color-primary-500"]}
                                 style={{ marginRight: 15 }}
                             />
                         </Pressable>
                     ),
                 })}
             />
-            <BottomTab.Screen
+            <PageTab.Screen
                 name="Workout"
                 component={WorkoutPage}
                 options={({ navigation }: RootTabScreenProps<"Workout">) => ({
@@ -62,20 +62,18 @@ function BottomTabNavigator() {
                         <TabBarIcon name="dumbbell" color={color} source={IconSource.MaterialCommunityIcons} />
                     ),
                     headerRight: () => (
-                        <Pressable
-                            onPress={() => navigation.navigate("Create New Workout")}
-                        >
-                            <MaterialCommunityIcons 
+                        <Pressable onPress={() => navigation.navigate("Create New Workout")}>
+                            <MaterialCommunityIcons
                                 name="plus"
                                 size={25}
-                                color={Colors[colorScheme].text}
+                                color={theme["color-primary-500"]}
                                 style={{ marginRight: 25 }}
                             />
                         </Pressable>
                     ),
                 })}
             />
-            <BottomTab.Screen
+            <PageTab.Screen
                 name="History"
                 component={HistoryPage}
                 options={{
@@ -85,8 +83,8 @@ function BottomTabNavigator() {
                     ),
                 }}
             />
-        </BottomTab.Navigator>
+        </PageTab.Navigator>
     );
 }
 
-export default BottomTabNavigator;
+export default PageTabNavigator;

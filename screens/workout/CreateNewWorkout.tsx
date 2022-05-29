@@ -1,23 +1,20 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
+import { Layout, Text, Input, useTheme } from "@ui-kitten/components";
 
-import { Text, View, TextInput } from "../components/Themed";
-import ExerciseInput from "../components/workout/ExerciseInput";
+import ExerciseInput from "../../components/workout/ExerciseInput";
 
 const CreateNewWorkoutPage = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.inputGroup}>
+        <Layout style={styles.container}>
+            <Layout style={styles.inputGroup}>
                 <Text>Template Name</Text>
-                <TextInput 
-                    style={styles.titleInput} 
-                    placeholder="Template Name"
-                />
-            </View>
+                <Input style={styles.titleInput} placeholder="Template Name" />
+            </Layout>
             <ExerciseInput />
-        </View>
-    );   
-}
+        </Layout>
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -33,7 +30,7 @@ const styles = StyleSheet.create({
     },
     inputGroup: {
         marginVertical: 20,
-    }
+    },
 });
 
 export default CreateNewWorkoutPage;
