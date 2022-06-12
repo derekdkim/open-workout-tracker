@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Text, Input, Layout, Button, useTheme } from "@ui-kitten/components";
 import { useState } from "react";
+import ExerciseSetInput from "./ExerciseSetInput";
 
 const ExerciseInput = () => {
     const [workoutSets, setWorkoutSets] = useState<{ exercise: String }[]>([]);
@@ -17,7 +18,7 @@ const ExerciseInput = () => {
             {/* Sets */}
             <Layout>
                 {workoutSets.map((item, index) => (
-                    <Text key={index}>Hello</Text>
+                    <ExerciseSetInput index={index + 1} key={index} />
                 ))}
             </Layout>
             <Button onPress={createSet}>Add Set</Button>
